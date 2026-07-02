@@ -1,0 +1,8 @@
+# Dev-only / local files — not needed on the published site
+.claude/
+docs/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
