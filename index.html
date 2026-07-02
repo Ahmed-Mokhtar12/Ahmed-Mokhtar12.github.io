@@ -14,10 +14,10 @@
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
-  <!-- Fonts -->
+  <!-- Fonts: Space Grotesk (display), Inter (body), JetBrains Mono (system/data) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -40,6 +40,11 @@
       </nav>
 
       <div class="nav__actions">
+        <span class="nav__status" title="Ahmed's AI automation system">
+          <span class="nav__status-dot" aria-hidden="true"></span>
+          SERA · ONLINE
+        </span>
+
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
           <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
             <circle cx="12" cy="12" r="4"></circle>
@@ -60,38 +65,55 @@
   <main>
     <!-- ===================== HERO ===================== -->
     <section class="hero section" id="hero">
+      <canvas id="neuralCanvas" class="hero__canvas" aria-hidden="true"></canvas>
       <div class="hero__bg" aria-hidden="true"></div>
+
       <div class="container hero__inner">
         <div class="hero__content reveal">
+          <div class="hero__boot" id="bootLines" aria-hidden="true">
+            <p class="boot-line" data-text="initializing hospitality_ai.core"></p>
+            <p class="boot-line" data-text="front_office.module ......... ONLINE"></p>
+            <p class="boot-line" data-text="guest_experience.module ..... ONLINE"></p>
+            <p class="boot-line" data-text="automation_engine ............ ACTIVE"></p>
+          </div>
+
           <p class="hero__eyebrow">Hospitality Technology &amp; AI Automation</p>
-          <h1 class="hero__name">Ahmed Mokhtar</h1>
+          <h1 class="hero__name">Ahmed Mokhtar<span class="hero__cursor" aria-hidden="true"></span></h1>
           <h2 class="hero__headline">Hospitality Technology &amp; AI Automation Specialist</h2>
           <p class="hero__intro">
             I combine deep hotel operations experience with AI automation to help hotels
             deliver faster, smarter, and more personalized guest service.
           </p>
           <div class="hero__cta">
-            <a href="#projects" class="btn btn--primary">View Projects</a>
-            <a href="https://www.linkedin.com/in/ahmed-mokhtar-hospitality-ai/" target="_blank" rel="noopener" class="btn btn--ghost">
+            <a href="#projects" class="btn btn--primary" data-glow>View Projects</a>
+            <a href="https://www.linkedin.com/in/ahmed-mokhtar-hospitality-ai/" target="_blank" rel="noopener" class="btn btn--ghost" data-glow>
               LinkedIn
             </a>
-            <a href="https://github.com/Ahmed-Mokhtar12" target="_blank" rel="noopener" class="btn btn--ghost">
+            <a href="https://github.com/Ahmed-Mokhtar12" target="_blank" rel="noopener" class="btn btn--ghost" data-glow>
               GitHub
             </a>
-            <a href="#contact" class="btn btn--ghost">Contact</a>
+            <a href="#contact" class="btn btn--ghost" data-glow>Contact</a>
           </div>
         </div>
 
         <div class="hero__visual reveal">
           <!-- PHOTO PLACEHOLDER — see README to swap the monogram for a real photo -->
-          <div class="avatar" id="avatar">
-            <div class="avatar__ring" aria-hidden="true"></div>
-            <div class="avatar__monogram">AM</div>
+          <div class="scan-frame" id="avatar">
+            <span class="scan-frame__corner scan-frame__corner--tl" aria-hidden="true"></span>
+            <span class="scan-frame__corner scan-frame__corner--tr" aria-hidden="true"></span>
+            <span class="scan-frame__corner scan-frame__corner--bl" aria-hidden="true"></span>
+            <span class="scan-frame__corner scan-frame__corner--br" aria-hidden="true"></span>
+            <div class="scan-frame__sweep" aria-hidden="true"></div>
+            <div class="scan-frame__photo">
+              <img class="avatar__photo" src="assets/profile_photo.jpg" alt="Ahmed Mokhtar" />
+            </div>
+            <span class="scan-frame__tag">AM · OPERATOR</span>
           </div>
         </div>
       </div>
       <a href="#stats" class="hero__scroll" aria-label="Scroll to content">
-        <span class="hero__scroll-dot"></span>
+        <span class="hero__scroll-label">SCROLL</span>
+        <span class="hero__scroll-line" aria-hidden="true"></span>
       </a>
     </section>
 
@@ -100,18 +122,22 @@
       <div class="container">
         <div class="stats__grid">
           <div class="stat-card reveal">
+            <span class="stat-card__tag">METRIC</span>
             <div class="stat-card__num"><span data-count="20" data-suffix="+">0</span></div>
             <div class="stat-card__label">Years hospitality experience</div>
           </div>
           <div class="stat-card reveal">
+            <span class="stat-card__tag">ROLE</span>
             <div class="stat-card__icon" aria-hidden="true">◆</div>
             <div class="stat-card__label stat-card__label--lg">Front Office &amp; guest operations leadership</div>
           </div>
           <div class="stat-card reveal">
+            <span class="stat-card__tag">FOCUS</span>
             <div class="stat-card__icon" aria-hidden="true">✦</div>
             <div class="stat-card__label stat-card__label--lg">AI automation built for hotels</div>
           </div>
           <div class="stat-card reveal">
+            <span class="stat-card__tag">GOAL</span>
             <div class="stat-card__icon" aria-hidden="true">★</div>
             <div class="stat-card__label stat-card__label--lg">Guest experience improvement focus</div>
           </div>
@@ -123,7 +149,7 @@
     <section class="about section" id="about">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-head__eyebrow">About</p>
+          <p class="section-head__eyebrow">// About</p>
           <h2 class="section-head__title">Operations experience, engineered into automation</h2>
         </div>
 
@@ -179,47 +205,55 @@
     <section class="expertise section" id="expertise">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-head__eyebrow">Expertise</p>
+          <p class="section-head__eyebrow">// Expertise</p>
           <h2 class="section-head__title">Where hospitality meets automation</h2>
         </div>
 
         <div class="cards-grid">
           <article class="feature-card reveal">
+            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">🏨</div>
             <h3>Hospitality Operations</h3>
             <p>Front office and guest operations grounded in real hotel workflows and standards.</p>
           </article>
           <article class="feature-card reveal">
+            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">💬</div>
             <h3>AI Guest Communication</h3>
             <p>AI-assisted replies to guest inquiries with controlled, on-brand messaging.</p>
           </article>
           <article class="feature-card reveal">
+            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">🔗</div>
             <h3>n8n Workflow Automation</h3>
             <p>End-to-end automations connecting hotel tools, data, and communication channels.</p>
           </article>
           <article class="feature-card reveal">
+            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">📊</div>
             <h3>Hotel Reporting &amp; Dashboards</h3>
             <p>Operational reports and Excel data transformed into clear management views.</p>
           </article>
           <article class="feature-card reveal">
+            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">📞</div>
             <h3>Voice AI / PBX Assistants</h3>
             <p>Voice assistants connected to hotel telephony with safe human fallback.</p>
           </article>
           <article class="feature-card reveal">
+            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">🛎</div>
             <h3>Service Recovery &amp; Guest Experience</h3>
             <p>Faster, tracked resolution of complaints and follow-ups to protect guest loyalty.</p>
           </article>
           <article class="feature-card reveal">
+            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">📚</div>
             <h3>Knowledge Base / RAG Systems</h3>
             <p>Structured hotel knowledge so AI answers accurately from approved information.</p>
           </article>
           <article class="feature-card reveal">
+            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">🤝</div>
             <h3>Internal Team Automation</h3>
             <p>Department notifications, escalations, and coordination handled automatically.</p>
@@ -232,7 +266,7 @@
     <section class="experience section" id="experience">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-head__eyebrow">Experience</p>
+          <p class="section-head__eyebrow">// Experience</p>
           <h2 class="section-head__title">A career built on the hotel floor</h2>
         </div>
 
@@ -240,6 +274,7 @@
           <div class="timeline__item reveal">
             <div class="timeline__marker" aria-hidden="true"></div>
             <div class="timeline__content">
+              <span class="timeline__log">LOG_01 :: FRONT_OFFICE</span>
               <h3>Front Office Manager</h3>
               <p class="timeline__role">Front office &amp; guest operations leadership</p>
               <p>
@@ -252,6 +287,7 @@
           <div class="timeline__item reveal">
             <div class="timeline__marker" aria-hidden="true"></div>
             <div class="timeline__content">
+              <span class="timeline__log">LOG_02 :: OPERATIONS</span>
               <h3>Hotel Operations Leadership</h3>
               <p class="timeline__role">Cross-department coordination</p>
               <p>
@@ -264,6 +300,7 @@
           <div class="timeline__item reveal">
             <div class="timeline__marker" aria-hidden="true"></div>
             <div class="timeline__content">
+              <span class="timeline__log">LOG_03 :: GUEST_RELATIONS</span>
               <h3>Guest Relations &amp; Service Recovery</h3>
               <p class="timeline__role">Complaint handling &amp; guest loyalty</p>
               <p>
@@ -276,6 +313,7 @@
           <div class="timeline__item reveal">
             <div class="timeline__marker" aria-hidden="true"></div>
             <div class="timeline__content">
+              <span class="timeline__log">LOG_04 :: REPORTING</span>
               <h3>Team Coordination &amp; Operational Reporting</h3>
               <p class="timeline__role">Reporting &amp; internal communication</p>
               <p>
@@ -287,7 +325,8 @@
 
           <div class="timeline__item reveal">
             <div class="timeline__marker timeline__marker--accent" aria-hidden="true"></div>
-            <div class="timeline__content">
+            <div class="timeline__content timeline__content--accent">
+              <span class="timeline__log timeline__log--accent">LOG_05 :: AI_AUTOMATION</span>
               <h3>AI Automation Project Owner</h3>
               <p class="timeline__role">Hospitality use cases</p>
               <p>
@@ -304,16 +343,18 @@
     <section class="projects section" id="projects">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-head__eyebrow">Projects</p>
+          <p class="section-head__eyebrow">// Projects</p>
           <h2 class="section-head__title">Selected hospitality AI work</h2>
         </div>
 
         <div class="project-grid">
           <article class="project-card reveal">
             <div class="project-card__top">
-              <span class="project-card__index">01</span>
-              <span class="project-card__mark" aria-hidden="true">✉</span>
+              <span class="project-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="project-card__id">sera-email-agent.sys</span>
+              <span class="project-card__status">ACTIVE</span>
             </div>
+            <span class="project-card__mark" aria-hidden="true">✉</span>
             <h3>Sera AI Email Agent</h3>
             <p>
               An AI email assistant for hotel guest communication. It reads guest inquiries,
@@ -329,9 +370,11 @@
 
           <article class="project-card reveal">
             <div class="project-card__top">
-              <span class="project-card__index">02</span>
-              <span class="project-card__mark" aria-hidden="true">📞</span>
+              <span class="project-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="project-card__id">sera-voice.sys</span>
+              <span class="project-card__status">ACTIVE</span>
             </div>
+            <span class="project-card__mark" aria-hidden="true">📞</span>
             <h3>Sera Voice AI / PBX Assistant</h3>
             <p>
               A hospitality voice assistant concept connected to hotel telephony/PBX workflows.
@@ -347,9 +390,11 @@
 
           <article class="project-card reveal">
             <div class="project-card__top">
-              <span class="project-card__index">03</span>
-              <span class="project-card__mark" aria-hidden="true">⚙</span>
+              <span class="project-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="project-card__id">ops-workflows.sys</span>
+              <span class="project-card__status">ACTIVE</span>
             </div>
+            <span class="project-card__mark" aria-hidden="true">⚙</span>
             <h3>Hotel Operations Workflow Automation</h3>
             <p>
               Automation workflows for hotel operations — guest follow-ups, internal escalation,
@@ -363,9 +408,11 @@
 
           <article class="project-card reveal">
             <div class="project-card__top">
-              <span class="project-card__index">04</span>
-              <span class="project-card__mark" aria-hidden="true">📊</span>
+              <span class="project-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="project-card__id">reporting-dash.sys</span>
+              <span class="project-card__status">ACTIVE</span>
             </div>
+            <span class="project-card__mark" aria-hidden="true">📊</span>
             <h3>Hospitality Reporting Dashboards</h3>
             <p>
               Operational reporting dashboards that transform hotel reports and Excel data into
@@ -378,11 +425,13 @@
             </ul>
           </article>
 
-          <article class="project-card reveal project-card--wide">
+          <article class="project-card reveal">
             <div class="project-card__top">
-              <span class="project-card__index">05</span>
-              <span class="project-card__mark" aria-hidden="true">📚</span>
+              <span class="project-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="project-card__id">hotel-knowledge-base.sys</span>
+              <span class="project-card__status">ACTIVE</span>
             </div>
+            <span class="project-card__mark" aria-hidden="true">📚</span>
             <h3>Hotel Knowledge Base &amp; AI Answers</h3>
             <p>
               A structured hotel knowledge system that lets AI agents answer accurately using
@@ -394,6 +443,26 @@
               <li>Hotel Information</li><li>Guest Support</li>
             </ul>
           </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__top">
+              <span class="project-card__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="project-card__id">sera-vision.sys</span>
+              <span class="project-card__status">ACTIVE</span>
+            </div>
+            <span class="project-card__mark" aria-hidden="true">🎥</span>
+            <h3>Sera Vision — Guest Flow &amp; Queue Analytics</h3>
+            <p>
+              A computer-vision layer built on the hotel's existing CCTV feeds to track guest
+              movement through the lobby and restaurants in real time. It turns camera footage
+              into queuing and traffic insights for management — flagging bottlenecks and peak
+              flow so teams can rebalance staffing and layout to keep service moving.
+            </p>
+            <ul class="tags">
+              <li>CCTV</li><li>Computer Vision</li><li>AI Analytics</li>
+              <li>Guest Flow</li><li>Queue Management</li><li>Hospitality Operations</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -402,7 +471,7 @@
     <section class="toolbox section" id="toolbox">
       <div class="container">
         <div class="section-head reveal">
-          <p class="section-head__eyebrow">Toolbox</p>
+          <p class="section-head__eyebrow">// Toolbox</p>
           <h2 class="section-head__title">Skills &amp; tools</h2>
         </div>
 
@@ -447,19 +516,27 @@
     <section class="contact section" id="contact">
       <div class="container">
         <div class="contact__card reveal">
-          <p class="section-head__eyebrow">Contact</p>
+          <span class="scan-frame__corner scan-frame__corner--tl" aria-hidden="true"></span>
+          <span class="scan-frame__corner scan-frame__corner--tr" aria-hidden="true"></span>
+          <span class="scan-frame__corner scan-frame__corner--bl" aria-hidden="true"></span>
+          <span class="scan-frame__corner scan-frame__corner--br" aria-hidden="true"></span>
+          <p class="section-head__eyebrow">// Contact</p>
           <h2 class="contact__title">Let's build smarter hospitality operations</h2>
           <p class="contact__text">
             Open to conversations about AI automation, guest experience, and operational
             efficiency for hotels. Let's talk about the added value automation can bring to your team.
           </p>
           <div class="contact__links">
-            <a href="https://www.linkedin.com/in/ahmed-mokhtar-hospitality-ai/" target="_blank" rel="noopener" class="btn btn--primary">LinkedIn</a>
-            <a href="https://github.com/Ahmed-Mokhtar12" target="_blank" rel="noopener" class="btn btn--ghost">GitHub</a>
-            <a href="mailto:ahmed.mokhtar12@gmail.com" class="btn btn--ghost">Email</a>
+            <a href="https://www.linkedin.com/in/ahmed-mokhtar-hospitality-ai/" target="_blank" rel="noopener" class="btn btn--primary" data-glow>LinkedIn</a>
+            <a href="https://github.com/Ahmed-Mokhtar12" target="_blank" rel="noopener" class="btn btn--ghost" data-glow>GitHub</a>
+            <a href="mailto:ahmed.mokhtar12@gmail.com" class="btn btn--ghost" data-glow>Email</a>
+            <a href="tel:+971505913426" class="btn btn--ghost" data-glow>Phone</a>
           </div>
           <p class="contact__email">
             <a href="mailto:ahmed.mokhtar12@gmail.com">ahmed.mokhtar12@gmail.com</a>
+          </p>
+          <p class="contact__email">
+            <a href="tel:+971505913426">+971 50 591 3426</a>
           </p>
         </div>
       </div>
