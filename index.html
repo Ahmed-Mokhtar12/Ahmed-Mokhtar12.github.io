@@ -14,10 +14,10 @@
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
-  <!-- Fonts: Space Grotesk (display), Inter (body), JetBrains Mono (system/data) -->
+  <!-- Font: JetBrains Mono only — a single monospace typeface throughout -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -65,9 +65,6 @@
   <main>
     <!-- ===================== HERO ===================== -->
     <section class="hero section" id="hero">
-      <canvas id="neuralCanvas" class="hero__canvas" aria-hidden="true"></canvas>
-      <div class="hero__bg" aria-hidden="true"></div>
-
       <div class="container hero__inner">
         <div class="hero__content reveal">
           <div class="code-window" aria-hidden="true">
@@ -91,25 +88,20 @@
             deliver faster, smarter, and more personalized guest service.
           </p>
           <div class="hero__cta">
-            <a href="#projects" class="btn btn--primary" data-glow>View Projects</a>
-            <a href="https://www.linkedin.com/in/ahmed-mokhtar-hospitality-ai/" target="_blank" rel="noopener" class="btn btn--ghost" data-glow>
+            <a href="#projects" class="btn btn--primary">View Projects</a>
+            <a href="https://www.linkedin.com/in/ahmed-mokhtar-hospitality-ai/" target="_blank" rel="noopener" class="btn btn--ghost">
               LinkedIn
             </a>
-            <a href="https://github.com/Ahmed-Mokhtar12" target="_blank" rel="noopener" class="btn btn--ghost" data-glow>
+            <a href="https://github.com/Ahmed-Mokhtar12" target="_blank" rel="noopener" class="btn btn--ghost">
               GitHub
             </a>
-            <a href="#contact" class="btn btn--ghost" data-glow>Contact</a>
+            <a href="#contact" class="btn btn--ghost">Contact</a>
           </div>
         </div>
 
         <div class="hero__visual reveal">
           <!-- PHOTO PLACEHOLDER — see README to swap the monogram for a real photo -->
           <div class="scan-frame" id="avatar">
-            <span class="scan-frame__corner scan-frame__corner--tl" aria-hidden="true"></span>
-            <span class="scan-frame__corner scan-frame__corner--tr" aria-hidden="true"></span>
-            <span class="scan-frame__corner scan-frame__corner--bl" aria-hidden="true"></span>
-            <span class="scan-frame__corner scan-frame__corner--br" aria-hidden="true"></span>
-            <div class="scan-frame__sweep" aria-hidden="true"></div>
             <div class="scan-frame__photo">
               <img class="avatar__photo" src="assets/profile_photo.jpg" alt="Ahmed Mokhtar" />
             </div>
@@ -225,49 +217,41 @@
 
         <div class="cards-grid">
           <article class="feature-card reveal">
-            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">🏨</div>
             <h3>Hospitality Operations</h3>
             <p>Front office and guest operations grounded in real hotel workflows and standards.</p>
           </article>
           <article class="feature-card reveal">
-            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">💬</div>
             <h3>AI Guest Communication</h3>
             <p>AI-assisted replies to guest inquiries with controlled, on-brand messaging.</p>
           </article>
           <article class="feature-card reveal">
-            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">🔗</div>
             <h3>n8n Workflow Automation</h3>
             <p>End-to-end automations connecting hotel tools, data, and communication channels.</p>
           </article>
           <article class="feature-card reveal">
-            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">📊</div>
             <h3>Hotel Reporting &amp; Dashboards</h3>
             <p>Operational reports and Excel data transformed into clear management views.</p>
           </article>
           <article class="feature-card reveal">
-            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">📞</div>
             <h3>Voice AI / PBX Assistants</h3>
             <p>Voice assistants connected to hotel telephony with safe human fallback.</p>
           </article>
           <article class="feature-card reveal">
-            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">🛎</div>
             <h3>Service Recovery &amp; Guest Experience</h3>
             <p>Faster, tracked resolution of complaints and follow-ups to protect guest loyalty.</p>
           </article>
           <article class="feature-card reveal">
-            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">📚</div>
             <h3>Knowledge Base / RAG Systems</h3>
             <p>Structured hotel knowledge so AI answers accurately from approved information.</p>
           </article>
           <article class="feature-card reveal">
-            <span class="feature-card__corner" aria-hidden="true"></span>
             <div class="feature-card__icon">🤝</div>
             <h3>Internal Team Automation</h3>
             <p>Department notifications, escalations, and coordination handled automatically.</p>
@@ -550,10 +534,6 @@
     <section class="contact section" id="contact">
       <div class="container">
         <div class="contact__card reveal">
-          <span class="scan-frame__corner scan-frame__corner--tl" aria-hidden="true"></span>
-          <span class="scan-frame__corner scan-frame__corner--tr" aria-hidden="true"></span>
-          <span class="scan-frame__corner scan-frame__corner--bl" aria-hidden="true"></span>
-          <span class="scan-frame__corner scan-frame__corner--br" aria-hidden="true"></span>
           <p class="section-head__eyebrow">// Contact</p>
           <h2 class="contact__title">Let's build smarter hospitality operations</h2>
           <p class="contact__text">
@@ -561,10 +541,10 @@
             efficiency for hotels. Let's talk about the added value automation can bring to your team.
           </p>
           <div class="contact__links">
-            <a href="https://www.linkedin.com/in/ahmed-mokhtar-hospitality-ai/" target="_blank" rel="noopener" class="btn btn--primary" data-glow>LinkedIn</a>
-            <a href="https://github.com/Ahmed-Mokhtar12" target="_blank" rel="noopener" class="btn btn--ghost" data-glow>GitHub</a>
-            <a href="mailto:ahmed.mokhtar12@gmail.com" class="btn btn--ghost" data-glow>Email</a>
-            <a href="tel:+971505913426" class="btn btn--ghost" data-glow>Phone</a>
+            <a href="https://www.linkedin.com/in/ahmed-mokhtar-hospitality-ai/" target="_blank" rel="noopener" class="btn btn--primary">LinkedIn</a>
+            <a href="https://github.com/Ahmed-Mokhtar12" target="_blank" rel="noopener" class="btn btn--ghost">GitHub</a>
+            <a href="mailto:ahmed.mokhtar12@gmail.com" class="btn btn--ghost">Email</a>
+            <a href="tel:+971505913426" class="btn btn--ghost">Phone</a>
           </div>
           <p class="contact__email">
             <a href="mailto:ahmed.mokhtar12@gmail.com">ahmed.mokhtar12@gmail.com</a>
@@ -580,7 +560,7 @@
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__copy">© <span id="year"></span> Ahmed Mokhtar — Hospitality Technology &amp; AI Automation.</p>
+      <p class="footer__copy">© <span id="year"></span> Ahmed Mokhtar — Hospitality Management &amp; AI Developer.</p>
       <a href="#hero" class="footer__top" aria-label="Back to top">↑ Back to top</a>
     </div>
   </footer>
