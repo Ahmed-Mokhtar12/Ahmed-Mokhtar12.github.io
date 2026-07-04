@@ -1,7 +1,7 @@
 /* =========================================================
    Ahmed Mokhtar — Portfolio
    Direction: extreme-minimal terminal / "vibe coding" style —
-   one muted sage accent, flat surfaces, hairline borders,
+   one warm gold accent, flat surfaces, hairline borders,
    a single monospace typeface throughout. No gradients, no
    glow, no multi-color decoration.
    Plain CSS, no build step. Theming via CSS custom properties.
@@ -19,11 +19,9 @@
   --text-muted:    #8c8c8c;
   --text-dim:      #565656;
 
-  --accent:        #5fc4a8;   /* primary accent — sage/teal, slightly livelier */
-  --accent-dim:    #5fc4a866;
-  --accent-10:     #5fc4a81a;
-  --accent-warm:   #d9a463;   /* secondary accent — muted gold, used sparingly */
-  --accent-warm-dim: #d9a46366;
+  --accent:        #d9a463;   /* single accent — warm gold, used throughout */
+  --accent-dim:    #d9a46366;
+  --accent-10:     #d9a4631a;
   --on-accent:     #0a0a0a;   /* text drawn on top of a solid accent fill */
 
   --radius:    10px;
@@ -49,11 +47,9 @@
   --text-muted:    #66665f;
   --text-dim:      #9a9a94;
 
-  --accent:        #227a63;
-  --accent-dim:    #227a6399;
-  --accent-10:     #227a6314;
-  --accent-warm:   #a3701f;
-  --accent-warm-dim: #a3701f99;
+  --accent:        #a3701f;
+  --accent-dim:    #a3701f99;
+  --accent-10:     #a3701f14;
   --on-accent:     #fafaf9;
 }
 
@@ -407,7 +403,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: var(--text-dim);
 }
 .stat-card__num { font-family: var(--font-mono); font-size: clamp(2.2rem, 4.6vw, 2.9rem); font-weight: 700; color: var(--accent); line-height: 1; margin: 16px 0 10px; }
-.stat-card__icon { font-size: 1.5rem; color: var(--accent-warm); margin: 16px 0 12px; }
+.stat-card__icon { font-size: 1.5rem; color: var(--accent); margin: 16px 0 12px; }
 .stat-card__label { color: var(--text-muted); font-weight: 500; }
 .stat-card__label--lg { font-size: .96rem; }
 
@@ -429,7 +425,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .about__pillar-icon {
   flex: none; display: grid; place-items: center;
   width: 42px; height: 42px; border-radius: var(--radius-sm);
-  border: 1px solid var(--line-strong); color: var(--accent-warm); font-size: 1.25rem;
+  border: 1px solid var(--line-strong); color: var(--accent); font-size: 1.25rem;
 }
 .about__pillar h3 { font-size: 1.05rem; margin-bottom: 4px; }
 .about__pillar p { color: var(--text-muted); font-size: .95rem; }
@@ -526,7 +522,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .project-card__impact {
   font-size: .88rem;
   color: var(--text-muted);
-  border-left: 2px solid var(--accent-warm);
+  border-left: 2px solid var(--accent);
   padding: 10px 14px;
   margin-bottom: 20px;
 }
@@ -535,7 +531,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-family: var(--font-mono);
   font-size: .68rem;
   letter-spacing: .08em;
-  color: var(--accent-warm);
+  color: var(--accent);
   margin-bottom: 4px;
 }
 
