@@ -323,7 +323,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero__cursor {
   display: inline-block;
   width: .5em; height: .8em;
-  background: var(--accent);
+  background: var(--text);
   animation: cursorBlink 1.1s step-end infinite;
 }
 .hero__headline {
